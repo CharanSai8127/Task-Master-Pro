@@ -22,6 +22,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: Install unzip
+        run: |
+          sudo apt-get update
+          sudo apt-get install unzip -y
+
     - name: Trivy-fs-scan1
       run: trivy fs --format table -o new.txt .
 
