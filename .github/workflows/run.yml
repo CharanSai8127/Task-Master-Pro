@@ -22,7 +22,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Trivy-fs-scan
+    - name: Trivy-fs-scan1
       run: trivy fs --format table -o new.txt .
 
     - name: Perform sonar-analysis
